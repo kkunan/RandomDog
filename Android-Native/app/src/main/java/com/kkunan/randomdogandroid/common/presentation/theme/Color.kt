@@ -1,4 +1,4 @@
-package com.kkunan.randomdogandroid.ui.theme
+package com.kkunan.randomdogandroid.common.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
