@@ -3,10 +3,8 @@ package com.kkunan.randomdogandroid.features.randomimage.data.models
 import com.google.gson.annotations.SerializedName
 
 data class RandomDogImageResponseModel(
-    @SerializedName("message")
-    val imageUrl: List<String>?,
-    @SerializedName("status")
-    val status: String?
+    @SerializedName("message") val imageUrl: List<String>?,
+    @SerializedName("status") val status: String?
 )
 
 //{
