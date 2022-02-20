@@ -19,13 +19,17 @@ protocol RandomImagePresentationLogic
 
 class RandomImagePresenter: RandomImagePresentationLogic
 {
-  weak var viewController: RandomImageDisplayLogic?
+var viewController: RandomImageDisplayLogic?
   
   // MARK: Do something
   
   func presentRandomImage(response: RandomImage.RandomDogImage.Response)
   {
-//    let viewModel = RandomImage.RandomDogImage.ViewModel()
-//    viewController?.displaySomething(viewModel: viewModel)
+      let urls = response.value?.map({ image in
+          image.url
+      })
+      let shouldSendErrorMessage = urls?.isEmpty ?? true
+      
+      viewController?.displayRandomImage(viewModel: RandomImage.RandomDogImage.ViewModel(value: shouldSendErrorMessage ? nil : urls , errorMessage: shouldSendErrorMessage ? "Cannot get image" : nil))
   }
 }

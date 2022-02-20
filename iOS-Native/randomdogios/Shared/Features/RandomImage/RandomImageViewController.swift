@@ -14,7 +14,7 @@ import UIKit
 
 protocol RandomImageDisplayLogic: class
 {
-  func displaySomething(viewModel: RandomImage.RandomDogImage.ViewModel)
+  func displayRandomImage(viewModel: RandomImage.RandomDogImage.ViewModel)
 }
 
 class RandomImageViewController: UIViewController, RandomImageDisplayLogic
@@ -69,20 +69,20 @@ class RandomImageViewController: UIViewController, RandomImageDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    randomImage()
   }
   
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
+  func randomImage()
   {
     let request = RandomImage.RandomDogImage.Request()
 //    interactor?.randomImage(request: request)
   }
   
-  func displaySomething(viewModel: RandomImage.RandomDogImage.ViewModel)
+  func displayRandomImage(viewModel: RandomImage.RandomDogImage.ViewModel)
   {
     //nameTextField.text = viewModel.name
   }
