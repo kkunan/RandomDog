@@ -25,6 +25,7 @@
 		876C9F9227C1F051007F1AF0 /* RandomImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C9F8C27C1F051007F1AF0 /* RandomImageInteractor.swift */; };
 		876C9F9A27C1F3CE007F1AF0 /* DogCeoApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C9F9927C1F3CE007F1AF0 /* DogCeoApiService.swift */; };
 		876C9FAB27C1FB0E007F1AF0 /* RandomImageWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C9F9B27C1F603007F1AF0 /* RandomImageWorkerTests.swift */; };
+		876C9FAF27C20088007F1AF0 /* RandomImageInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C9FAE27C20088007F1AF0 /* RandomImageInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		876C9F9927C1F3CE007F1AF0 /* DogCeoApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCeoApiService.swift; sourceTree = "<group>"; };
 		876C9F9B27C1F603007F1AF0 /* RandomImageWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageWorkerTests.swift; sourceTree = "<group>"; };
 		876C9FA227C1FB07007F1AF0 /* RandomDogiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomDogiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		876C9FAE27C20088007F1AF0 /* RandomImageInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				876C9F9B27C1F603007F1AF0 /* RandomImageWorkerTests.swift */,
+				876C9FAE27C20088007F1AF0 /* RandomImageInteractorTests.swift */,
 			);
 			path = RandomImage;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				876C9FAF27C20088007F1AF0 /* RandomImageInteractorTests.swift in Sources */,
 				876C9FAB27C1FB0E007F1AF0 /* RandomImageWorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

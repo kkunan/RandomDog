@@ -14,7 +14,7 @@ import UIKit
 
 protocol RandomImagePresentationLogic
 {
-  func presentSomething(response: RandomImage.RandomDogImage.Response)
+  func presentRandomImage(response: RandomImage.RandomDogImage.Response)
 }
 
 class RandomImagePresenter: RandomImagePresentationLogic
@@ -23,7 +23,7 @@ class RandomImagePresenter: RandomImagePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: RandomImage.RandomDogImage.Response)
+  func presentRandomImage(response: RandomImage.RandomDogImage.Response)
   {
 //    let viewModel = RandomImage.RandomDogImage.ViewModel()
 //    viewController?.displaySomething(viewModel: viewModel)

@@ -19,11 +19,10 @@ enum RandomImage
   enum RandomDogImage
   {
     struct Request {
-        let number: Int = 1
+        var number: Int = 1
     }
       struct Response {
           let value: [DogImage]?
-          let errorMessage: String?
           
       }
       struct ViewModel {

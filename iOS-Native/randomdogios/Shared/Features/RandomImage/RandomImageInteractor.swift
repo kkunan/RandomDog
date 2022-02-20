@@ -14,7 +14,7 @@ import UIKit
 
 protocol RandomImageBusinessLogic
 {
-  func doSomething(request: RandomImage.RandomDogImage.Request)
+  func randomImage(request: RandomImage.RandomDogImage.Request) async
 }
 
 protocol RandomImageDataStore
@@ -26,16 +26,16 @@ class RandomImageInteractor: RandomImageBusinessLogic, RandomImageDataStore
 {
   var presenter: RandomImagePresentationLogic?
   var worker: RandomImageWorker?
-  //var name: String = ""
   
-  // MARK: Do something
+  // MARK: randomImage
   
-  func doSomething(request: RandomImage.RandomDogImage.Request)
+  func randomImage(request: RandomImage.RandomDogImage.Request) async
   {
-    worker = RandomImageWorker()
-//    worker?.getRandomImage()
-    
-//    let response = RandomImage.RandomDogImage.Response()
-//    presenter?.presentSomething(response: response)
+      let response = await worker?.getRandomImage(number: request.number)
+      let dogImages = response?.message?.map({ url in
+          DogImage(url: url)
+      })
+      
+      presenter?.presentRandomImage(response: RandomImage.RandomDogImage.Response(value: dogImages))
   }
 }

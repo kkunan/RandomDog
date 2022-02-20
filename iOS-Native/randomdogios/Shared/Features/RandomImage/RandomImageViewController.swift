@@ -79,7 +79,7 @@ class RandomImageViewController: UIViewController, RandomImageDisplayLogic
   func doSomething()
   {
     let request = RandomImage.RandomDogImage.Request()
-    interactor?.doSomething(request: request)
+//    interactor?.randomImage(request: request)
   }
   
   func displaySomething(viewModel: RandomImage.RandomDogImage.ViewModel)
