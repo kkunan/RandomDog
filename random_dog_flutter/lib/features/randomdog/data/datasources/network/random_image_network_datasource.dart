@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:random_dog_flutter/common/data/services/dog_ceo_service.dart';
 import 'package:random_dog_flutter/features/randomdog/data/models/random_dog_response.dart';
 
@@ -11,7 +13,11 @@ class RandomImageNetworkDatasourceImpl implements RandomImageNetworkDatasource {
 
   @override
   Future<RandomDogResponse> randomImage(int number) async {
-    await service.getRandomImage(number);
-    return RandomDogResponse(message: [],status: '');
+    final response = await service.getRandomImage(number);
+    try {
+      return RandomDogResponse.fromJson(json.decode(response.body));
+    } catch (e){
+      return RandomDogResponse(message: null ,status: 'failed');
+    }
   }
 }
