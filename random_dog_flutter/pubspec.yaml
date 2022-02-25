@@ -31,6 +31,11 @@ dependencies:
     sdk: flutter
 
   equatable: ^2.0.3
+  http: ^0.13.4
+  json_serializable: ^6.1.4
+  json_annotation: ^4.4.0
+  # flutter pub run build_runner build
+  build_runner: ^2.1.7
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -40,9 +45,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # dart run build_runner build
+
   mockito: ^5.1.0
-  build_runner: ^2.1.7
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
