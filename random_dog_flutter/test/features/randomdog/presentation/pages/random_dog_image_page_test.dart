@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:random_dog_flutter/features/randomdog/domain/entities/dog_image.dart';
-import 'package:random_dog_flutter/features/randomdog/presentation/pages/random_dog_image_page.dart';
 import 'package:random_dog_flutter/features/randomdog/presentation/providers/random_dog_page_provider.dart';
+import 'package:random_dog_flutter/features/randomdog/presentation/widgets/random_dog_image_page.dart';
 
 import 'random_dog_image_page_test.mocks.dart';
 
