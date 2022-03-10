@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:random_dog_flutter/common/di/dependency_injection.dart';
 import 'package:random_dog_flutter/common/presentation/theme/colors.dart';
-import 'package:random_dog_flutter/features/randomdog/presentation/pages/random_dog_image_page.dart';
+import 'package:random_dog_flutter/features/randomdog/presentation/pages/random_dog_image_screen.dart';
 
 void main() {
   initDi();
