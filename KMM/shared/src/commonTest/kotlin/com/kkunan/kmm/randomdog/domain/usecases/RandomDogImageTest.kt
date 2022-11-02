@@ -1,10 +1,9 @@
 @file:OptIn(ExperimentalCoroutinesApi::class)
 
-package com.kkunan.kmm.randomdog.usecases
+package com.kkunan.kmm.randomdog.domain.usecases
 
 import com.kkunan.kmm.randomdog.domain.entities.DogImage
 import com.kkunan.kmm.randomdog.domain.repositories.DogImageRepository
-import com.kkunan.kmm.randomdog.domain.usecases.RandomDogImage
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
