@@ -27,6 +27,8 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
+                implementation("dev.tmapps:konnection:1.1.9")
+
                 implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
