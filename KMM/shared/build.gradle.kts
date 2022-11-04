@@ -20,6 +20,8 @@ kotlin {
         framework {
             baseName = "shared"
         }
+
+        pod ("Reachability")
     }
     
     sourceSets {
@@ -27,8 +29,6 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                implementation("dev.tmapps:konnection:1.1.9")
-
                 implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
@@ -36,6 +36,10 @@ kotlin {
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+
+                val koinVersion = "3.2.0"
+                implementation("io.insert-koin:koin-core:$koinVersion")
+                implementation("io.insert-koin:koin-test:$koinVersion")
             }
         }
         val commonTest by getting {
@@ -94,4 +98,7 @@ android {
         minSdk = 23
         targetSdk = 32
     }
+}
+dependencies {
+    implementation("androidx.core:core-ktx:+")
 }
