@@ -1,8 +1,6 @@
 package com.kkunan.kmm.randomdog.data.datasources
 
-import cocoapods.Reachability.Reachability
-
 actual fun getConnectionStatus(): Boolean {
-    val reachability = Reachability()
-    return reachability.isReachable()
+    //TODO: find a proper way to implement this
+    return true
 }
