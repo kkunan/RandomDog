@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -34,7 +35,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @Composable
-fun RandomDogScreen (randomDogViewModel: RandomDogViewModel = viewModel()) {
+fun RandomDogScreen(randomDogViewModel: RandomDogViewModel = viewModel()) {
     val dogImage by randomDogViewModel.dogImageUrl.observeAsState(emptyList())
     val painter = rememberImagePainter(data = if (dogImage.isEmpty()) null else dogImage[0].url)
     Surface {
@@ -47,18 +48,22 @@ fun RandomDogScreen (randomDogViewModel: RandomDogViewModel = viewModel()) {
 }
 
 @Composable
-fun RandomDogView(painter: Painter, onRandomClick: () -> Unit,
-                  modifier: Modifier = Modifier) {
+private fun RandomDogView(
+    painter: Painter, onRandomClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Surface(Modifier.background(MaterialTheme.colors.surface)) {
-        Image(painter = painterResource(id = R.drawable.dog_icon_foreground),
-            contentDescription = "", Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillHeight
-            )
+        Image(
+            painter = painterResource(id = R.drawable.dog_icon_foreground),
+            contentDescription = "",
+            Modifier
+                .fillMaxSize(),
+            contentScale = ContentScale.FillHeight,
+        )
 
         Column(
             modifier
-                .verticalScroll(rememberScrollState())
-            ,
+                .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -71,13 +76,20 @@ fun RandomDogView(painter: Painter, onRandomClick: () -> Unit,
                     .clip(RoundedCornerShape(16.dp))
                     .border(4.dp, MaterialTheme.colors.primary, RoundedCornerShape(16.dp))
                     .shadow(2.dp)
+                    .testTag("currentDogImage")
             )
             Spacer(modifier = Modifier.height(32.dp))
-            Button(onClick = { onRandomClick() },
+            Button(
+                onClick = { onRandomClick() },
                 Modifier.fillMaxWidth(fraction = 0.6f),
-                shape = RoundedCornerShape(50)) {
-                Text("RANDOM!", style = TextStyle(fontSize = 28.sp,
-                    fontWeight = FontWeight.Bold), modifier = Modifier.padding(vertical = 16.dp))
+                shape = RoundedCornerShape(50)
+            ) {
+                Text(
+                    "RANDOM!", style = TextStyle(
+                        fontSize = 28.sp,
+                        fontWeight = FontWeight.Bold
+                    ), modifier = Modifier.padding(vertical = 16.dp)
+                )
             }
         }
     }
@@ -86,10 +98,10 @@ fun RandomDogView(painter: Painter, onRandomClick: () -> Unit,
 
 @Preview
 @Composable
-fun PreviewRandomDog() {
+private fun PreviewRandomDog() {
     RandomDogAndroidTheme {
         RandomDogView(painterResource(R.drawable.ic_launcher_background),
-        modifier = Modifier.fillMaxSize(), onRandomClick = {
+            modifier = Modifier.fillMaxSize(), onRandomClick = {
 
             })
     }
